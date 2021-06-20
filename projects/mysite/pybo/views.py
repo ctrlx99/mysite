@@ -41,7 +41,8 @@ def answer_create(request, question_id):
             answer.create_date = timezone()
             answer.question = question
             answer.sava()
-            return redirect('pybo:detail' question_id=question.id)
+            return redirect('pybo:detail', question_id=question.id)
+
     else:
         form = AnswerForm()
     context = {'question': question, 'form': form}
